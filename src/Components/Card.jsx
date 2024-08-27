@@ -18,9 +18,9 @@ const Card = ({
     subheading=false,
     listItems=false,
     center=false,
-    transparency=1
+    transparency=1,
+    children=false,
 }) => {
-    const [heightState,setHeightState] = useState(height);
     const [listItemOpen, setListItemOpen] = useState(false);
 
         const styles = {
@@ -29,7 +29,7 @@ const Card = ({
                 border:'1px solid transparent',
                 borderRadius:'20px',
                 width:width?width:'350px',
-                height:heightState?heightState:'250px',
+                height:height?(listItemOpen?'auto':height):'auto',
                 overflowY:'scroll',
                 padding:'5px',
                 boxSizing:'border-box',
@@ -55,15 +55,10 @@ const Card = ({
         },
     }
 
-    const maxHeightHandler = () => {
-        if(heightState!='90vh')setHeightState('90vh')
-        else setHeightState(height)
-    }
     const listItemOpenHandler = () => setListItemOpen(!listItemOpen)
 
     const handleClick = () => {
         listItemOpenHandler();
-        maxHeightHandler();
     }
 
     return <div style={styles.cardStyles} onClick={handleClick}>
@@ -71,6 +66,7 @@ const Card = ({
         {heading && <h3 style={styles.heading}>{heading}</h3>}
         {subheading && <h4 style={styles.subheading}>{subheading}:</h4>}
         {listItems && listItems.map((item)=><ListItem key={item.name} item={item} listItemOpen={listItemOpen}/>)}
+        {children}
     </div>
 }
 

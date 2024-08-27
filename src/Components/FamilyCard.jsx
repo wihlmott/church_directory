@@ -8,6 +8,7 @@ const FamilyCard = ({familyDetails}) => {
     return <Card
     width={width<500?'90%':false}
     center={width<500?true:false}
+    height={width<500?false:'250px'}
     transparency={0.75}
     heading={familyDetails.surname}
     profilePic

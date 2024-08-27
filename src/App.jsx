@@ -1,7 +1,9 @@
 import backgroundImg from '../images/background_whiteIMG.jpg'
+import Card from './Components/Card';
 
 import FamilyCard from "./Components/FamilyCard"
 import Footer from "./Components/Footer";
+import FormComp from './Components/FormComp';
 import ListItem from './Components/ListItem';
 
 import { icons, pages } from "./config";
@@ -40,7 +42,7 @@ const styles = {
     position:'absolute', top:'0', left:'0',
     zIndex:'-1',
     opacity:'0.8',},
-  divMax:{height:'100vh', overflow:'scroll'},
+  divMax:{height:'calc(100vh - 55px)', overflow:'scroll', paddingBottom:'55px'},
   calendarHeading:{textAlign:'center',
     borderBottom:'1px solid rgba(0,0,0,0.3)',
     marginTop:'5px',
@@ -65,6 +67,8 @@ const styles = {
           {returnBirthdays(allFamilies,dummyMonth).map((item)=>
           <ListItem key={item.name} item={item} listItemOpen={true}/>)}
         </div>}
+
+      {page == 'signin' && <Card center transparency={0.85} heading={'sign in'} children={<FormComp/>}/>}
 
       <Footer icons={icons} setPage={setPage}/>
     </>

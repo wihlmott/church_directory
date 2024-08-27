@@ -1,11 +1,15 @@
+import { FiLogIn } from "react-icons/fi";
+import { colors } from "../config";
+
 const Footer = ({icons=false, setPage}) => {    
     return <div style={styles.footerStyle}>
         <div style={styles.footerDiv}>
             {icons && icons.map((icon)=>
-                <div key={icon.name} style={styles.icons} onClick={()=>{setPage(icon.name)}}>
+                <div key={icon.name} style={styles.icons} onClick={()=>setPage(icon.name)}>
                  {icon.element}   
                 </div>
             )}
+        <FiLogIn style={{...styles.icons, ...styles.signin}} onClick={()=>setPage('signin')}/>
         </div>
     </div>
 }
@@ -15,7 +19,8 @@ const styles = {
         footerDiv:
             {margin:'auto', marginTop:'5px', width:'auto', textAlign:'center', },
         icons:
-            {fontSize:'40px', color:'rgba(133,11,108,1)', margin:'0 2px 0 2px', display:'inline'},
+            {fontSize:'40px', color:colors.iconsColor(1), margin:'0 2px 0 2px', display:'inline'},
+        signin:{float:'right', margin:'0 5px 0 -50px'},
     }
 
 export default Footer;

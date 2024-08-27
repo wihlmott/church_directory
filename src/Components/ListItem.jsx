@@ -5,13 +5,12 @@ const styles = {
     listItemsOpened:{
         textTransform:'capitalize',
         marginTop:'2px',
-        marginLeft:'5px',
         display:'block',
         border: '1px solid rgba(0,0,0,0.1)',
         borderRadius:'8px',
-        padding:'2px',
+        padding:'3px',
         boxShadow: '1px 1px 3px 0px rgba(0,0,0,0.5)',
-        height:'80px',
+        height:'auto',
         backgroundColor:`rgba(255,255,255,0.4)`,
         transition:'all 0.3s'},
     listItemsClosed:{
