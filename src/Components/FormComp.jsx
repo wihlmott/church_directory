@@ -29,7 +29,7 @@ const FormComp = () => {
 
 const  styles = {
     labels:{marginBottom:'0', textShadow:'1px 1.2px rgba(0,0,0,0.2)'},
-    inputs:{borderRadius:'8px', padding:'3px', boxShadow:'1px 1.5px rgba(0,0,0,0.6) inset',},
+    inputs:{borderRadius:'8px', padding:'3px', boxShadow:'1px 1.25px rgba(0,0,0,0.3) inset',},
     submitBtn:{
         marginTop:'10px',
         display:'inline-block',
@@ -39,7 +39,8 @@ const  styles = {
         cursor:'pointer',
         backgroundColor: colors.iconsColor(0.8),
         textTransform:'uppercase',
-        color:'white'
+        color:'white',
+        textShadow:'1px 1.2px rgba(0,0,0,0.4)'
     },
 
 }

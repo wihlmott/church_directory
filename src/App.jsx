@@ -25,6 +25,12 @@ const allFamilies = [
     {name:'Wade', dob:'10/10/1990'},
     {name:'Alanza',dob:'18/06/1993'},
     {name:"Violet", dob:''}]},
+  {surname:'Wicomb', members:[
+      {name:'Eugene', dob:'12/02/1967'},
+      {name:'Celeste',dob:'30/03/1969'},
+      {name:"Bianca", dob:'17/05/1987'}, 
+      {name:"Robin", dob:'18/09/1991'}, 
+      {name:"Simone", dob:'28/05/1996'}]},
 ]
 
 const currentMonth = {number:(new Date()).getMonth(),long:(new Date()).toLocaleString('default', {month:'long'})};
@@ -55,7 +61,7 @@ const styles = {
       </div>
 
       {page=='phonebook' && <div style={styles.divMax}>
-        {allFamilies.map((family)=><FamilyCard key={family.surname+family.members[0]} familyDetails={family}/>)}
+        {allFamilies.sort((a,b)=>a.surname>b.surname?1:-1).map((family)=><FamilyCard key={family.surname+family.members[0]} familyDetails={family}/>)}
       </div>}
 
       {page == 'calendar' && <div style={styles.divMax}>
