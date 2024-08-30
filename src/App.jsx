@@ -6,7 +6,7 @@ import Footer from "./Components/Footer";
 import FormComp from './Components/FormComp';
 import ListItem from './Components/ListItem';
 
-import { icons, pages } from "./config";
+import { formQuestions, icons, pages } from "./config";
 import { returnBirthdays } from './Helpers/helperFunctions';
 
 import { useState } from "react";
@@ -74,7 +74,7 @@ const styles = {
           <ListItem key={item.name} item={item} listItemOpen={true}/>)}
         </div>}
 
-      {page == 'signin' && <Card center transparency={0.85} heading={'sign in'} children={<FormComp/>}/>}
+      {page == 'signin' && <Card center transparency={0.85} heading={'sign in'} children={<FormComp formQuestions={formQuestions}/>}/>}
 
       <Footer icons={icons} setPage={setPage}/>
     </>

@@ -5,4 +5,6 @@ export const icons = [{name:'phonebook', element:<FaAddressBook/>}, {name:'calen
 
 export const pages = ['phonebook', 'calendar'];
 
-export const colors = {iconsColor: (opacity)=>`rgba(133,11,108,${opacity})`}
+export const colors = {iconsColor: (opacity)=>`rgba(133,11,108,${opacity})`};
+
+export const formQuestions = ['name', 'surname', 'gender', 'nee surname', 'email', 'address', 'cell number', 'date of birth'];
